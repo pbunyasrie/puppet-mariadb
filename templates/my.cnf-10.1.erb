@@ -19,6 +19,9 @@ lc_messages_dir	= /usr/share/mysql
 lc_messages	= en_US
 skip-external-locking
 
+<% if @server_id %>
+server-id = <%= @server_id %>
+<% end %>
 <% if @bind_address %>
 bind-address    = <%= @bind_address %>
 <% end %>
@@ -82,7 +85,11 @@ log_slow_verbosity	= query_plan
 #log_slow_admin_statements
 #
 
+<% if @log_bin %>
+log_bin = <%= @log_bin %>
+<% else %>
 #log_bin				= /var/log/mysql/mariadb-bin
+<% end %>
 #log_bin_index			  = /var/log/mysql/mariadb-bin.index
 # not fab for performance, but safer
 #sync_binlog  		   = 1

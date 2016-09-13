@@ -37,6 +37,8 @@ class mariadb::config(
   $root_password     = 'UNSET',
   $old_root_password = '',
   $bind_address      = $mariadb::params::bind_address,
+  $server_id = $mariadb::params::server_id,
+  $log_bin = $mariadb::params::log_bin,
   $port              = $mariadb::params::port,
   $etc_root_password = $mariadb::params::etc_root_password,
   $service_name      = $mariadb::params::service_name,
